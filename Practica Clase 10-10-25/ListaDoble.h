@@ -12,5 +12,6 @@ public:
 	void Mostrar();
 	void Buscar(int valor);
 	void Eliminar(int valor);
+	void Modificar(int valorViejo, int valorNuevo);
 };
 

@@ -143,5 +143,37 @@ void ListaDoble::Eliminar(int valor)
 		cout << "El valor " << valor << " no fue encontrado en la lista." << endl;
 	}
 }
+#pragma endregion
 
+#pragma region Metodo Modificar
+
+void ListaDoble::Modificar(int valorViejo, int valorNuevo)
+{
+	NodoDoble* actual = head;
+	bool encontrado = false;
+
+	//Buscar el nodo a modificar
+	while (actual != nullptr && !encontrado)
+	{
+		//Verificar si el dato del nodo actual coincide con el valor a modificar
+		if (actual->dato == valorViejo)
+		{
+			encontrado = true;
+		}
+		else
+		{
+			actual = actual->siguiente;
+		}
+	}
+	//Modificar el nodo si fue encontrado
+	if (encontrado)
+	{
+		actual->dato = valorNuevo; //Modificar el dato del nodo
+		cout << "El valor " << valorViejo << " ha sido modificado a " << valorNuevo << "." << endl;
+	}
+	else
+	{
+		cout << "El valor " << valorViejo << " no fue encontrado en la lista." << endl;
+	}
+}
 #pragma endregion

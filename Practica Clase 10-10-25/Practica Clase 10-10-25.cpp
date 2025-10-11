@@ -16,6 +16,8 @@ int main()
     int dato = 0;
 	int datoBuscar = 0;
 	int datoEliminar = 0;
+	int valorViejo = 0;
+	int valorNuevo = 0;
 
 	//Llenar la lista
     while (Continuar)
@@ -50,5 +52,14 @@ int main()
 
 	//Mostrar la lista actualizada
     lista.Mostrar();
-	
+
+	//Modificar un dato de la lista
+	cout << "Ingrese el dato a modificar" << endl;
+	cin >> valorViejo;
+	cout << "Ingrese el nuevo valor" << endl;
+	cin >> valorNuevo;
+	lista.Modificar(valorViejo, valorNuevo);
+
+	//Mostrar la lista actualizada
+	lista.Mostrar();
 }

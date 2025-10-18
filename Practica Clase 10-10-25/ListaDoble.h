@@ -13,5 +13,8 @@ public:
 	void Buscar(int valor);
 	void Eliminar(int valor);
 	void Modificar(int valorViejo, int valorNuevo);
+	void GuardarEnArchivo();
+	void GuardarElPromedio();
+	void LeerDesdeArchivo();
 };
 

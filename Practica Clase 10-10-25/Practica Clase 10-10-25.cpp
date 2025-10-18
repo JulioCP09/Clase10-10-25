@@ -39,8 +39,8 @@ int main()
     }
 	//Mostrar la lista
 	lista.Mostrar();
-
-	//Buscar un dato en la lista
+	
+	/*//Buscar un dato en la lista
 	cout << "Ingrese el dato a buscar" << endl;
 	cin >> datoBuscar;
     lista.Buscar(datoBuscar);
@@ -58,8 +58,17 @@ int main()
 	cin >> valorViejo;
 	cout << "Ingrese el nuevo valor" << endl;
 	cin >> valorNuevo;
-	lista.Modificar(valorViejo, valorNuevo);
+	lista.Modificar(valorViejo, valorNuevo);*/
 
 	//Mostrar la lista actualizada
 	lista.Mostrar();
+
+	//Guardar la lista en un archivo
+	lista.GuardarEnArchivo();
+
+	//Guardar el promedio de los nodos en un archivo
+	lista.GuardarElPromedio();
+
+	//Leer la lista desde un archivo
+	lista.LeerDesdeArchivo();
 }

@@ -1,0 +1,7 @@
+Datos de la Lista Doble:
+6
+5
+4
+3
+2
+Promedio de los nodos: 4

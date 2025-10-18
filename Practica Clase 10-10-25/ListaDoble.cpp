@@ -1,5 +1,8 @@
 #include "ListaDoble.h"
 #include <iostream>
+#include <fstream>
+#include <string>
+
 using namespace std;
 
 #pragma region Constructor
@@ -174,6 +177,71 @@ void ListaDoble::Modificar(int valorViejo, int valorNuevo)
 	else
 	{
 		cout << "El valor " << valorViejo << " no fue encontrado en la lista." << endl;
+	}
+}
+
+#pragma endregion
+
+#pragma region Metodo GuardarEnArchivo
+
+void ListaDoble::GuardarEnArchivo()
+{
+	ofstream archivo("PromedioNodos.txt");
+	if (!archivo) 
+	{
+		cout << "No se pudo crear el archivo para escribir." << endl;
+	}
+	archivo << "Datos de la Lista Doble:" << endl;
+	NodoDoble* actual = head;
+	while (actual != nullptr)
+	{
+		archivo << actual->dato << endl; //Escribir el dato del nodo actual en el archivo
+		actual = actual->siguiente; //Avanzar al siguiente nodo
+	}
+	archivo.close(); //Cerrar el archivo
+}
+#pragma endregion
+
+#pragma region Metodo GuardarElPromedio
+
+void ListaDoble::GuardarElPromedio()
+{
+	ofstream archivo("PromedioNodos.txt", ios::app); //Abrir el archivo en modo append
+	if (!archivo) 
+	{
+		cout << "No se pudo abrir el archivo para escribir." << endl;
+	}
+	NodoDoble* actual = head;
+	float suma = 0;
+	int contador = 0;
+	//Calcular la suma y el contador de nodos
+	while (actual != nullptr)
+	{
+		suma += actual->dato; //Sumar el dato del nodo actual
+		contador++; //Incrementar el contador de nodos
+		actual = actual->siguiente; //Avanzar al siguiente nodo
+	}
+	//Calcular el promedio
+	float promedio = (contador > 0) ? static_cast<double>(suma) / contador : 0.0;
+	//Escribir el promedio en el archivo
+	archivo << "Promedio de los nodos: " << promedio << endl;
+	archivo.close(); //Cerrar el archivo
+}
+#pragma endregion
+
+#pragma region Metodo LeerDesdeArchivo
+
+void ListaDoble::LeerDesdeArchivo()
+{
+	ifstream archivo("PromedioNodos.txt");
+	if (!archivo) 
+	{
+		cout << "No se pudo abrir el archivo para leer." << endl;
+	}
+	string linea;
+	while (getline(archivo, linea))
+	{
+		cout << linea << endl; //Mostrar la línea leída del archivo
 	}
 }
 #pragma endregion

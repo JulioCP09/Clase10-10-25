@@ -18,6 +18,7 @@ int main()
 	int datoEliminar = 0;
 	int valorViejo = 0;
 	int valorNuevo = 0;
+	int valorNodo = 0;
 
 	//Llenar la lista
     while (Continuar)
@@ -39,6 +40,17 @@ int main()
     }
 	//Mostrar la lista
 	lista.Mostrar();
+
+	//Insertar un dato en una posicion especifica
+	cout << "Ingrese el dato a insertar" << endl;
+	cin >> dato;
+	cout << "Ingrese el valor del nodo donde desea insertar" << endl;
+	cin >> valorNodo;
+	lista.InsertarDondeSea(dato, valorNodo);
+	
+	//Mostrar la lista actualizada
+	lista.Mostrar();
+
 	
 	/*//Buscar un dato en la lista
 	cout << "Ingrese el dato a buscar" << endl;
@@ -58,7 +70,7 @@ int main()
 	cin >> valorViejo;
 	cout << "Ingrese el nuevo valor" << endl;
 	cin >> valorNuevo;
-	lista.Modificar(valorViejo, valorNuevo);*/
+	lista.Modificar(valorViejo, valorNuevo);
 
 	//Mostrar la lista actualizada
 	lista.Mostrar();
@@ -70,5 +82,5 @@ int main()
 	lista.GuardarElPromedio();
 
 	//Leer la lista desde un archivo
-	lista.LeerDesdeArchivo();
+	lista.LeerDesdeArchivo();*/
 }

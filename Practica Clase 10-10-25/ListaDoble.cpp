@@ -244,4 +244,45 @@ void ListaDoble::LeerDesdeArchivo()
 		cout << linea << endl; //Mostrar la línea leída del archivo
 	}
 }
+
 #pragma endregion
+
+#pragma region Metodo InsertarDondeSea
+
+void ListaDoble::InsertarDondeSea(int valor, int valorNodo)
+{
+	NodoDoble* actual = head;
+	bool encontrado = false;
+	while (actual != nullptr && !encontrado)
+	{
+		if (actual->dato == valorNodo)
+		{
+			encontrado = true;
+		}
+		else
+		{
+			actual = actual->siguiente;
+		}
+	}
+	if (encontrado)
+	{
+		NodoDoble* nuevo = new NodoDoble(valor);
+		nuevo->siguiente = actual;
+		nuevo->anterior = actual->anterior;
+		if (actual->anterior != nullptr)
+		{
+			actual->anterior->siguiente = nuevo;
+		}
+		else
+		{
+			head = nuevo;
+		}
+		actual->anterior = nuevo;
+	}
+	else
+	{
+		cout << "El valor " << valorNodo << " no fue encontrado en la lista." << endl;
+	}
+}
+#pragma endregion
+

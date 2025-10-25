@@ -16,5 +16,5 @@ public:
 	void GuardarEnArchivo();
 	void GuardarElPromedio();
 	void LeerDesdeArchivo();
+	void InsertarDondeSea(int valor, int valorNodo);
 };
-

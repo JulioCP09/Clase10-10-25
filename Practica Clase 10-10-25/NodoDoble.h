@@ -9,4 +9,3 @@ public:
 	NodoDoble(int valor);//Constructor
 
 };
-

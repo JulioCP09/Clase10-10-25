@@ -41,7 +41,17 @@ int main()
 	//Mostrar la lista
 	lista.Mostrar();
 
-	//Insertar un dato en una posicion especifica
+	//Metodos de la practica para examen
+	
+	//Buscar multiplos de un numero en la lista
+	cout << "Ingrese un numero para buscar sus multiplos en la lista" << endl;
+	cin >> datoBuscar;
+	lista.BuscarMultiplosDe(datoBuscar);
+
+	//Calcular el promedio de los nodos
+	lista.PromedioDeNodos();
+
+	/*//Insertar un dato en una posicion especifica
 	cout << "Ingrese el dato a insertar" << endl;
 	cin >> dato;
 	cout << "Ingrese el valor del nodo donde desea insertar" << endl;
@@ -52,7 +62,7 @@ int main()
 	lista.Mostrar();
 
 	
-	/*//Buscar un dato en la lista
+	//Buscar un dato en la lista
 	cout << "Ingrese el dato a buscar" << endl;
 	cin >> datoBuscar;
     lista.Buscar(datoBuscar);

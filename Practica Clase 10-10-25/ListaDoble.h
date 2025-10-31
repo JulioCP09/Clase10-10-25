@@ -17,4 +17,8 @@ public:
 	void GuardarElPromedio();
 	void LeerDesdeArchivo();
 	void InsertarDondeSea(int valor, int valorNodo);
+
+	//Metodos de la practica para examen
+	void BuscarMultiplosDe(int numero);
+	void PromedioDeNodos();
 };

@@ -12,7 +12,6 @@ ListaDoble::ListaDoble() : head(nullptr)
 #pragma endregion
 
 #pragma region Metodo Insertar
-
 void ListaDoble::Insertar(int valor) 
 {
 	//Verificar si el valor ya existe en la lista
@@ -44,7 +43,6 @@ void ListaDoble::Insertar(int valor)
 #pragma endregion
 
 #pragma region Metodo Mostrar
-
 void ListaDoble::Mostrar() 
 {
 	NodoDoble* actual = head;
@@ -62,7 +60,6 @@ void ListaDoble::Mostrar()
 #pragma endregion
 
 #pragma region Metodo Buscar
-
 void ListaDoble::Buscar(int valor) 
 {
 	NodoDoble* actual = head;
@@ -97,7 +94,6 @@ void ListaDoble::Buscar(int valor)
 #pragma endregion
 
 #pragma region Metodo Eliminar
-
 void ListaDoble::Eliminar(int valor)
 {
 	NodoDoble* actual = head; //Nodo actual para recorrer la lista
@@ -149,7 +145,6 @@ void ListaDoble::Eliminar(int valor)
 #pragma endregion
 
 #pragma region Metodo Modificar
-
 void ListaDoble::Modificar(int valorViejo, int valorNuevo)
 {
 	NodoDoble* actual = head;
@@ -183,7 +178,6 @@ void ListaDoble::Modificar(int valorViejo, int valorNuevo)
 #pragma endregion
 
 #pragma region Metodo GuardarEnArchivo
-
 void ListaDoble::GuardarEnArchivo()
 {
 	ofstream archivo("PromedioNodos.txt");
@@ -203,7 +197,6 @@ void ListaDoble::GuardarEnArchivo()
 #pragma endregion
 
 #pragma region Metodo GuardarElPromedio
-
 void ListaDoble::GuardarElPromedio()
 {
 	ofstream archivo("PromedioNodos.txt", ios::app); //Abrir el archivo en modo append
@@ -230,7 +223,6 @@ void ListaDoble::GuardarElPromedio()
 #pragma endregion
 
 #pragma region Metodo LeerDesdeArchivo
-
 void ListaDoble::LeerDesdeArchivo()
 {
 	ifstream archivo("PromedioNodos.txt");
@@ -248,7 +240,6 @@ void ListaDoble::LeerDesdeArchivo()
 #pragma endregion
 
 #pragma region Metodo InsertarDondeSea
-
 void ListaDoble::InsertarDondeSea(int valor, int valorNodo)
 {
 	NodoDoble* actual = head;
@@ -284,5 +275,53 @@ void ListaDoble::InsertarDondeSea(int valor, int valorNodo)
 		cout << "El valor " << valorNodo << " no fue encontrado en la lista." << endl;
 	}
 }
+
+#pragma endregion
+
+//Metodos de la practica para examen
+
+#pragma region Metodo BuscarMultiplosDe
+void ListaDoble::BuscarMultiplosDe(int numero)
+{
+	NodoDoble* actual = head;
+	bool encontrado = false;
+	cout << "Multiplos de " << numero << " en la lista: ";
+	while (actual != nullptr)
+	{
+		if (actual->dato % numero == 0)
+		{
+			cout << actual->dato << " ";
+			encontrado = true;
+		}
+		actual = actual->siguiente;
+	}
+	if (!encontrado)
+	{
+		cout << "No se encontraron multiplos de " << numero << " en la lista." << endl;
+	}
+	else
+	{
+		cout << endl;
+	}
+}
+
+#pragma endregion
+
+#pragma region Metodo PromedioDeNodos
+void ListaDoble::PromedioDeNodos()
+{
+	NodoDoble* actual = head;
+	float suma = 0;
+	int contador = 0;
+	while (actual != nullptr)
+	{
+		suma += actual->dato;
+		contador++;
+		actual = actual->siguiente;
+	}
+	float promedio = (contador > 0) ? static_cast<double>(suma) / contador : 0.0;
+	cout << "Promedio de los nodos: " << promedio << endl;
+}
+
 #pragma endregion
 

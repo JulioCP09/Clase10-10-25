@@ -319,8 +319,7 @@ void ListaDoble::PromedioDeNodos()
 		contador++;
 		actual = actual->siguiente;
 	}
-	float promedio = (contador > 0) ? static_cast<double>(suma) / contador : 0.0;
-	cout << "Promedio de los nodos: " << promedio << endl;
+	cout << "Promedio de los nodos: " << suma / contador << endl;
 }
 
 #pragma endregion
